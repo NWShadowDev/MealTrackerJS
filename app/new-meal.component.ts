@@ -32,9 +32,9 @@ import { Meal } from './meal.model';
     `
   })
   export class NewMealComponent {
-    @Output() addClickSender = new EventEmitter();
-    addClickedHandler(name: string, details: string, calories: string) {
-       this.addClickSender.emit(new Meal(name,details,parseInt(calories)));
+    @Output() addMealSender = new EventEmitter();
+    addMealClickedHandler(name: string, details: string, calories: string) {
+       this.addMealSender.emit(new Meal(name,details,parseInt(calories)));
        //console.log(new Meal(name,details,parseInt(calories)));
      }
   }
