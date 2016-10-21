@@ -4,28 +4,37 @@ import { Meal } from './meal.model';
 @Component({
   selector: 'new-meal',
   template: `
-  <h1>New Meal</h1>
-  <div class="container">
-  <label>Name of Meal Item:</label>
-  <input #newDescription>
-  <label>Calories:</label>
-  <input #newCalories>
-  <label>Details of Meal Item</label>
-  <input #newDetails>
-  <button (click)="
-  addClicked(newName.value, newCalories.value, newDetails.value);
-  newName.value='';
-  newCalories.value='';
-  newDetails.value=';'
-  ">Add</button>
-  </div>
-  `
-})
+    <div class ="well">
+      <div class="form-group">
+      <label>Enter the name of the meal:</label>
+      <input class="form-control" type="text" #newMealName>
+      </div>
+      <div class="form-group">
+      <label>Enter the details about the meal:</label>
+      <input class="form-control" type="text" #newMealDetails>
+      </div>
+      <div class="form-group">
+      <label>Enter the number of calories:</label>
+      <input class="form-control" type="text"#newMealCalories>
+      </div>
+      <button class="btn"
+        (click)="addClickedHandler(
+        newMealName.value,
+        newMealDetails.value,
+        newMealCalories.value);
 
-export class NewMealComponent {
-  @Output() newMealSender = new EventEmitter();
-  addClicked(name: string, calories: number, details: string ) {
-    var newMealToAdd: Meal = new Meal(name, calories, details);
-    this.newMealSender.emit(newMealToAdd);
+        newMealName.value = '';
+        newMealDetails.value = '';
+        newMealCalories.value = '';
+        ">Add Meal
+      </button>
+    </div>
+    `
+  })
+  export class NewMealComponent {
+    @Output() addClickSender = new EventEmitter();
+    addClickedHandler(name: string, details: string, calories: string) {
+       this.addClickSender.emit(new Meal(name,details,parseInt(calories)));
+       //console.log(new Meal(name,details,parseInt(calories)));
+     }
   }
-}
