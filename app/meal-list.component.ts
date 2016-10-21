@@ -14,7 +14,7 @@ import { Meal } from './meal.model';
         </select>
       </div>
       <div class="row">
-        <div class="col-sm-4" *ngFor=" let currentMeal of childMealList | calorie:desiredCalories">
+        <div class="col-xs-3" *ngFor=" let currentMeal of childMealList | calorie:desiredCalories">
           <div class="well">
             <label>Name: {{currentMeal.name}}</label>
             <label>Details: {{currentMeal.details}}</label>
