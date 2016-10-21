@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Meal } from './meal.model';
-
+//Bug Reported - Edit Button not working :(
 @Component ({
   selector: 'edit-meal',
   template: `
