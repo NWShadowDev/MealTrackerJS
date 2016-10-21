@@ -11,7 +11,7 @@ import { Meal } from './meal.model';
       <new-meal
         (addMealSender) = "addMeal($event)"
       ></new-meal>
-      <h3> Current Meals </h3> <!--Default Meals List-->
+      <div class="well"><h3> Current Meals </h3></div> <!--Default Meals List-->
       <meal-list *ngIf = "masterMealList.length !== 0"
         [childMealList] = "masterMealList"
       ></meal-list>
@@ -23,8 +23,10 @@ import { Meal } from './meal.model';
       new Meal("Macaroni & Cheese", "cheesy macaroni", 300), //here are the default added meals to show the user the format
       new Meal("Biscuits & Gravy", "comfort breakfast food", 500)
     ];
-     addMeal(newMeal: Meal) { //adding
+     addMeal(newMeal: Meal) { //adding a new meal entry
        this.masterMealList.push(newMeal);
-      //  console.log(this.masterMealList);
+
+      // I want a condition when a property of a meal is not entered, to alert to enter in fields
+     // eg: If the user doesn't enter a number for the calories, but instead enters a letter or nothing, I want an alert
      }
   }

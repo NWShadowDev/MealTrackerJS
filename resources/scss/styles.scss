@@ -25,5 +25,13 @@ body {
 
 h3 {
   color: $black;
-  background-color: rgba(211,211,211,0.5);
+}
+
+a {
+  background-color: green;
+  color:white;
+}
+
+input {
+  length: 500px;
 }
