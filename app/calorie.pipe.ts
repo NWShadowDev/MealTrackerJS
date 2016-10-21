@@ -3,7 +3,7 @@ import { Meal } from './meal.model';
 
 @Pipe({
   name: "calorie",
-  pure: false
+  pure: true
 })
 
 export class CaloriePipe implements PipeTransform {  //Sorting Pipe by number of calories

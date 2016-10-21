@@ -7,7 +7,7 @@ import { Meal } from './meal.model';
     <div class ="well">
       <div class="form-group">
         <label>Filter by Calories</label>
-        <select (change)="onCalorieChange($event.target.value)" class="filter form-control">
+        <select (change)="onCalorieChange($event.target.value)" class="filter">
           <option value="all" selected="selected">Show All Meals</option> <!--default selected drop down value-->
           <option value="low">Low Calorie (under 500 cals)</option>
           <option value="high">High Calorie (over 500 cals)</option>

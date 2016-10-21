@@ -5,7 +5,7 @@ import { Meal } from './meal.model';
   selector: 'my-app',
   template: `
     <div class ="container">
-      <div class="container" id="title">
+      <div class="container">
          <img id="banner" src ="resources/img/banner.png">
       </div>
       <new-meal
