@@ -1,6 +1,6 @@
 # _"Whats on the Menu?" Meal and Calorie tracker!_
 
-![banner](https://github.com/NWShadowDev/MealTracker/blob/master/img/banner.png)
+![banner](https://github.com/NWShadowDev/MealTrackerJS/blob/master/resources/img/banner.png)
 
 
 #### _"What's on the Menu?", October 14th, 2016_
