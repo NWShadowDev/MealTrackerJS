@@ -7,7 +7,9 @@ import { Meal } from './meal.model';
   <div>
     <input *ngIf="meal.done === true" type="checkbox" checked (click)="toggleDone(false)"/>
     <input *ngIf="meal.done === false" type="checkbox" (click)="toggleDone(true)"/>
-    <label>{{ meal.description }}</label>
+    <label>{{ meal.name }}</label>
+    <label>{{ meal.calories }}</label>
+    <label>{{ meal.details }}</label>
   </div>
   `
 })

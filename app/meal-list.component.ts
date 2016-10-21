@@ -8,7 +8,7 @@ import { Meal } from './meal.model';
   <select (change)="onChange($event.target.value)" class="filter">
   <option value="all">Show All</option>
   <option value="isDone">Show Meals above 500 cals</option>
-  <option value="notDone" selected="selected">Show Meals below 500 cals</option>
+  <option value="notDone" >Show Meals below 500 cals</option>
   </select>
   <div *ngFor="let currentMeal of childMealList | completeness:selectedCompleteness">
   <meal-display [meal]="currentMeal"></meal-display>
