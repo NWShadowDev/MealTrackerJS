@@ -1,40 +1,40 @@
+
 import { Component, Output, EventEmitter } from '@angular/core';
 import { Meal } from './meal.model';
 
 @Component({
-  selector: 'new-meal', //Add a meal form
+  selector: 'new-meal',
   template: `
     <div class ="well">
       <div class="form-group">
-      <label>Name of Meal:</label>
-      <input class="form-control" type="text" #addMealName>
+        <label>Name of the Meal:</label>
+        <input class="form-control" type="text" #newMealName>
       </div>
       <div class="form-group">
-      <label>Describe the Meal:</label>
-      <input class="form-control" type="text" #addMealDetails>
+        <label>Details about the Meal:</label>
+        <input class="form-control" type="text" #newMealDetails>
       </div>
       <div class="form-group">
-      <label>Calories:</label>
-      <input class="form-control" type="text"#addMealCalories>
+        <label>Number of calories:</label>
+        <input class="form-control" type="text"#newMealCalories>
       </div>
-      <button class="btn btn btn-success"
-        (click)="addMealClickedHandler(
-        addMealName.value,
-        addMealDetails.value,
-        addMealCalories.value);
-
-        addMealName.value = '';
-        addMealDetails.value = '';
-        addMealCalories.value =add;
+      <button class="btn"
+        (click)="addClickedHandler(
+        newMealName.value,
+        newMealDetails.value,
+        newMealCalories.value);
+        newMealName.value = '';
+        newMealDetails.value = '';
+        newMealCalories.value = '';
         ">Add Meal
       </button>
     </div>
     `
   })
+
   export class NewMealComponent {
-    @Output() addMealSender = new EventEmitter();
-    addMealClickedHandler(name: string, details: string, calories: string) {
-       this.addMealSender.emit(new Meal(name,details,parseInt(calories))); //we have to parse the calorie value because its in as a string
-       //console.log(new Meal(name,details,parseInt(calories)));
+    @Output() addClickSender = new EventEmitter();
+    addClickedHandler(name: string, details: string, calories: string) {
+       this.addClickSender.emit(new Meal(name,details,parseInt(calories)));
      }
   }

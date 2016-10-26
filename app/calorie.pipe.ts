@@ -3,24 +3,24 @@ import { Meal } from './meal.model';
 
 @Pipe({
   name: "calorie",
-  pure: true
+  pure: false
 })
 
-export class CaloriePipe implements PipeTransform {  //Sorting Pipe by number of calories
+export class CaloriePipe implements PipeTransform {
   transform(input: Meal[], calories: string) {
     if (calories !== "all") {
       var output: Meal[] = [];
       if (calories == "low") {
         for (let i = 0; i < input.length; i++) {
           if (input[i].calories < 500) {
-            output.push(input[i]);  //show Meals with a parsed string of less than 500 calories
+            output.push(input[i]);
           }
         }
         return output;
       }else{
         for (let i = 0; i < input.length; i++) {
           if (input[i].calories >= 500) {
-            output.push(input[i]); //show Meals with a parsed string of more than 500 calories
+            output.push(input[i]);
           }
         }
         return output;

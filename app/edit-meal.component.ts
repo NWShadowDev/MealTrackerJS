@@ -1,33 +1,33 @@
+
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Meal } from './meal.model';
-//Bug Reported - Edit Button not working :(
-@Component ({
+
+@Component({
   selector: 'edit-meal',
   template: `
-  <div *ngIf="childSelectedMeal">
-  <h1>Edit Meal</h1>
-    <div>
+    <div class ="well" *ngIf ="childSelectedMeal">
+      <h2>Edit Meal</h2>
       <div class="form-group">
-        <label>Edit Name:</label>
-        <input class="form-control" type="text" [(ngModel)]="childSelectedMeal.name">
+        <label>Enter the new name of the Meal:</label>
+        <input class="form-control" [(ngModel)]="childSelectedMeal.name">
       </div>
       <div class="form-group">
-        <label>Edit Details:</label>
-        <input class="form-control" type="text" [(ngModel)]="childSelectedMeal.details">
+        <label>Enter the new details about the Meal:</label>
+        <input class="form-control" [(ngModel)]="childSelectedMeal.details">
       </div>
       <div class="form-group">
-        <label>Edit Calories:</label>
-        <input class="form-control" type="number" [(ngModel)]="childSelectedMeal.calories">
-        <button class="btn" (click)="doneClicked()">Done</button>
+        <label>Enter the new number of calories:</label>
+        <input class="form-control" [(ngModel)]="childSelectedMeal.calories">
       </div>
+      <button class="btn"(click)="doneClickedHandler()">Done</button>
     </div>
-  </div>
-  `
-})
-export class EditMealComponent {
-  @Input() childSelectedMeal: Meal;
-  @Output() doneClickedSender = new EventEmitter();
-  doneClicked() {
-    this.doneClickedSender.emit();
+    `
+  })
+
+  export class EditMealComponent {
+    @Input() childSelectedMeal: Meal;
+    @Output() doneClickedSender = new EventEmitter();
+    doneClickedHandler() {
+      this.doneClickedSender.emit();
+    }
   }
-}
