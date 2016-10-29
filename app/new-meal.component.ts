@@ -1,4 +1,3 @@
-
 import { Component, Output, EventEmitter } from '@angular/core';
 import { Meal } from './meal.model';
 
@@ -7,15 +6,15 @@ import { Meal } from './meal.model';
   template: `
     <div class ="well">
       <div class="form-group">
-        <label>Name of the Meal:</label>
+        <label>Enter the name of the meal:</label>
         <input class="form-control" type="text" #newMealName>
       </div>
       <div class="form-group">
-        <label>Details about the Meal:</label>
+        <label>Enter the details about the meal:</label>
         <input class="form-control" type="text" #newMealDetails>
       </div>
       <div class="form-group">
-        <label>Number of calories:</label>
+        <label>Enter the number of calories:</label>
         <input class="form-control" type="text"#newMealCalories>
       </div>
       <button class="btn"
